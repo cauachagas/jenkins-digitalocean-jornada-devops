@@ -52,3 +52,7 @@ variable "ssh_key_name" {
   type    = string
   default = ""
 }
+
+output "jenkins_ip" {
+  value = digitalocean_droplet.jenkins.ipv4_address
+}
