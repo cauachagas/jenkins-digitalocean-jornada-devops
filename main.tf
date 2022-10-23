@@ -18,4 +18,9 @@ resource "digitalocean_droplet" "jenkins" {
   name     = "jenkins"
   region   = "nyc3"
   size     = "s-2vcpu-2gb"
+  ssh_keys = [data.digitalocean_ssh_key.jornada.id]
+}
+
+data "digitalocean_ssh_key" "jornada" {
+  name = "JornadaDevOps"
 }
